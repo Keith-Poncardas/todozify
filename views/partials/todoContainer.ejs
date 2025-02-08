@@ -1,0 +1,9 @@
+<div class="container mt-3 mb-3">
+  <% if (todos.length !== 0) { %>
+  <% todos.forEach(todo => { %>
+  <%- include('card', { todo, formatDate }) %>
+  <% }) %>
+  <% } else { %>
+  <p class="text-center">Your list is empty!</p>
+  <% }  %>
+</div>

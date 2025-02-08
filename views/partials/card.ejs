@@ -1,0 +1,22 @@
+<div class="card border-0 bg-body-tertiary shadow-sm p-3 mt-3">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-center">
+      <!-- Left Side (Title & Author) -->
+      <div class="flex-grow-1 overflow-hidden">
+        <h5 class="card-title text-truncate mb-1 fw-semibold fs-6"><%= todo.title %></h5>
+        <h6 class="card-subtitle text-body-secondary text-truncate fs-7">Listed by <%= todo.author %> on <%= formatDate(todo.createdAt) %></h6>
+      </div>
+
+      <!-- Right Side (Buttons) -->
+      <div class="ms-auto d-flex gap-2">
+        <button type="submit" class="btn btn-outline-secondary btn-sm" onclick="window.location='/todos/<%- todo._id %>/edit'">Edit</button>
+        <form action="/todos/<%- todo._id %>?_method=DELETE" method="post">
+          <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Comment Text -->
+    <p class="card-text mt-3 fs-6 text-truncate"><%= todo.comment %></p>
+  </div>
+</div>

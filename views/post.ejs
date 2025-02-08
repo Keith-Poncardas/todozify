@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <%- include('partials/head', { title: '' }) %>
+</head>
+
+<body>
+  <%- include('partials/navbar') %>
+  <%- include('partials/form', {
+        formAction: "/todos",
+        formTitle: "Post Listings",
+        author: "",
+        title: "",
+        comment: "",
+        buttonText: "Post"
+      }) %>
+  <%- include('partials/script') %>
+</body>
+
+</html>

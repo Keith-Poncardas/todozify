@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <%- include('partials/head', { title: todo.title }) %>
+</head>
+
+<body>
+  <%- include('partials/navbar') %>
+  <%- include('partials/form', {
+    formAction: "/todos/" + todo._id + "?_method=PUT",
+    formTitle: "Edit Listing",
+    author: todo.author,
+    title: todo.title,
+    comment: todo.comment,
+    buttonText: "Update"
+  }) %>
+  <%- include('partials/script') %>
+</body>
+
+</html>
