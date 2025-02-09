@@ -1,9 +1,16 @@
 <div class="container mt-3 mb-3">
-  <% if (todos.length !== 0) { %>
+  <% 
+  const todo = { 
+    title: "❗❗❗ WARNING ❗❗❗", 
+    author: "Keith Poncardas", 
+    comment: "This application is for demonstration purposes only! It is designed to showcase RESTful API principles and how CRUD operations work using modern web technologies. No real data is stored or secured. Do not use it for sensitive or production-level information.",
+    isDisable: true,
+  }; 
+  %>
+
+  <%- include('card', { todo: todo }) %>
+
   <% todos.forEach(todo => { %>
   <%- include('card', { todo, formatDate }) %>
   <% }) %>
-  <% } else { %>
-  <p class="text-center">Your list is empty!</p>
-  <% }  %>
 </div>
