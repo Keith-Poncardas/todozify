@@ -11,7 +11,7 @@ const createTodo = async (data) => {
  * Async function to get all todos directly to the database.
  */
 const getTodos = async () => {
-  return await Todo.find(); // Await the data to be find then return.
+  return await Todo.find().sort({ updatedAt: -1 }); // Await the data to be find and sorted by descending order then return.
 };
 
 /**
